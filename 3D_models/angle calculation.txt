@@ -1,0 +1,11 @@
+﻿#import <math.h>
+double a, height = 15, c = 282.25, A = 87.63*3.14/180, B, targetAngle;
+
+void loop() {
+  calAng(height);
+}
+void calAng(double b) {
+  a = sqrt(sq(b) + sq(c) - 2 * b * c * cos(A));
+  B = asin(sin(A)*b/a)*180/3.14;
+  targetAngle = B + 4.55 - 2.37;
+}
