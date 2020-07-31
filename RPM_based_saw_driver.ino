@@ -1,4 +1,4 @@
-//exterlanl libraries
+//external libraries
 #include "Ucglib.h"
 Ucglib_ST7735_18x128x160_HWSPI ucg(8, 10, 9);
 #include "math.h"
@@ -12,7 +12,6 @@ Ucglib_ST7735_18x128x160_HWSPI ucg(8, 10, 9);
 
 void setup() {
   Serial.begin(9600);
-  // Display setup:
   ucg.begin(UCG_FONT_MODE_SOLID);
   ucg.setFont(ucg_font_7x14_mf);
   ucg.clearScreen();
