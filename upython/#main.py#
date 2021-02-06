@@ -8,12 +8,10 @@ import interrupts as itr
 import definitions as df
 import menu as mu
 
-mainMenuLayout = mu.spawnMenu('mainMenu', 0, 5, 'MAIN MENU', 'Choose stock type', 'Choose stock size', 'Stock ammount', 'Balade position', 'Start cutting')        
-mainMenuLayout.menuDisplay()
+mu.mainMenuLayout()
 
 def main():
-    #mu.menuPointer(1,5)
-    mainMenuLayout.menuPointer()
+    mu.menuPointer(1,5)
     mu.rotaryMenu()
     df.RPM()
     df.armAngleRead(itr.cntAngleEnc)
