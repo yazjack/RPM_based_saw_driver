@@ -16,6 +16,7 @@ t = time.ticks_ms()
 tdt = 1
 tt = 1
 
+cntMenuBtn = 1
 oldEncPos = 0
 encoderPos = 1
 aFlagMenu = 0
@@ -50,7 +51,7 @@ def clbEncB(v):
 
 def clbEncBtn(v):
     global cntMenuBtn
-    print('button pressed')
+    cntMenuBtn = 1
 
 def clbEncAngA(v):
     global cntAngleEnc

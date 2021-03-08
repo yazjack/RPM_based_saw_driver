@@ -14,9 +14,8 @@ class spawnMenu:
     def menuDisplay(self):
         global left_margin
         df.tft.fill(TFT.BLACK)
-        h = 5
+        h = 10
         for item in self.arg:
-            print(self.arg)
             df.tft.text((left_margin, h), item, TFT.WHITE, sysfont, 1, nowrap=True)
             h += sysfont["Height"]
 
@@ -24,16 +23,11 @@ class spawnMenu:
         global left_margin
         margin = left_margin -10
         if itr.encoderPos <= self.menuMax and itr.encoderPos >= self.menuMin:
-            h = 5 + itr.encoderPos*sysfont["Height"]
+            h = 10 + itr.encoderPos*sysfont["Height"]
+            df.tft.fillrect([margin, sysfont["Height"]+10], [sysfont["Width"], sysfont["Height"]*self.menuMax], TFT.BLACK)
             df.tft.text((margin, h), "*", TFT.RED, sysfont, 1, nowrap=True) 
-            df.tft.text((margin, h-sysfont["Height"]), "*", TFT.BLACK, sysfont, 1, nowrap=True)
-            df.tft.text((margin, h+sysfont["Height"]), "*", TFT.BLACK, sysfont, 1, nowrap=True)
+            #print(itr.encoderPos)
         elif itr.encoderPos >= self.menuMax:
             itr.encoderPos = self.menuMax
         elif itr.encoderPos <= self.menuMin:
             itr.encoderPos = self.menuMin
-
-def rotaryMenu():
-    itr.oldEncPos
-    if  itr.oldEncPos != itr.encoderPos:
-        itr.oldEncPos = itr.encoderPos 
